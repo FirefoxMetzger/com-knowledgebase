@@ -53,6 +53,15 @@ def _looks_like_html(s: str) -> bool:
 
 
 def _message_summary_dict(m: Message) -> dict[str, Any]:
+    snippet_markdown: str | None = None
+    if m.snippet and _looks_like_html(m.snippet):
+        sm = " ".join(_html_to_markdown(m.snippet).split())
+        snippet_markdown = sm if sm else None
+
+    subject_markdown: str | None = None
+    if m.subject and _looks_like_html(m.subject):
+        subject_markdown = " ".join(_html_to_markdown(m.subject).split()) or None
+
     return {
         "id": str(m.id),
         "thread_id": str(m.thread_id) if m.thread_id else None,
@@ -60,7 +69,9 @@ def _message_summary_dict(m: Message) -> dict[str, Any]:
         "from_address": m.from_address,
         "to_addresses": m.to_addresses,
         "subject": m.subject,
+        "subject_markdown": subject_markdown,
         "snippet": m.snippet,
+        "snippet_markdown": snippet_markdown,
         "is_read": m.is_read,
         "is_starred": m.is_starred,
         "has_attachments": m.has_attachments,
@@ -220,7 +231,9 @@ def get_message(ctx: click.Context, message_id: str, as_json: bool) -> None:
         if md:
             click.echo(md)
         else:
-            click.echo("(could not convert body_html to markdown; use --json for raw HTML)")
+            click.echo(
+                "(could not convert body_html to markdown; use --json for raw HTML)"
+            )
     else:
         click.echo("(no body content)")
 
