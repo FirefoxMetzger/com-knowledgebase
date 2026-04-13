@@ -1,0 +1,9 @@
+[project]
+name = "inkbox-starter"
+version = "0.1.0"
+description = "Starter app using uv and the Inkbox Python SDK"
+requires-python = ">=3.12"
+dependencies = [
+    "inkbox>=0.2.10",
+    "python-dotenv>=1.2.2",
+]

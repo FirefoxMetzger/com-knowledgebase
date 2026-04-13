@@ -1,0 +1,4 @@
+{
+  "name": "inkbox-starter (uv)",
+  "install": "bash start.sh"
+}
