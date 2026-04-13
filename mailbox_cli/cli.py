@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from contextlib import contextmanager
 from pathlib import Path
@@ -98,6 +99,72 @@ def _message_detail_dict(m: MessageDetail) -> dict[str, Any]:
         }
     )
     return d
+
+
+def _safe_filename_slug(text: str, max_len: int = 48) -> str:
+    """ASCII-ish slug for filenames; falls back to 'message' if empty."""
+    raw = (text or "").strip().lower()
+    raw = re.sub(r"[^\w\s-]", "", raw, flags=re.UNICODE)
+    raw = re.sub(r"[-\s]+", "-", raw).strip("-")
+    if not raw:
+        return "message"
+    return raw[:max_len].rstrip("-")
+
+
+def _looks_like_newsletter_email(detail: MessageDetail) -> bool:
+    """Light heuristic: skip obvious thread mail; keep bulk / newsletter-shaped mail."""
+    if detail.in_reply_to:
+        return False
+    subj = (detail.subject or "").strip()
+    if re.match(r"(?i)^(re|fw|fwd)\s*:", subj):
+        return False
+    return True
+
+
+def _message_body_markdown(detail: MessageDetail) -> str:
+    if detail.body_text and detail.body_text.strip():
+        return detail.body_text.strip()
+    if detail.body_html:
+        md = _html_to_markdown(detail.body_html)
+        if md:
+            return md
+        return (
+            f"_(HTML body present but could not be converted to Markdown; "
+            f"raw length {len(detail.body_html)} chars)_"
+        )
+    return ""
+
+
+def _write_email_markdown(path: Path, detail: MessageDetail) -> None:
+    body_md = _message_body_markdown(detail)
+    to_line = ", ".join(detail.to_addresses)
+    cc = detail.cc_addresses or []
+    bcc = detail.bcc_addresses or []
+    fm: dict[str, Any] = {
+        "source": "inkbox-email",
+        "id": str(detail.id),
+        "message_id": detail.message_id,
+        "thread_id": str(detail.thread_id) if detail.thread_id else None,
+        "direction": detail.direction.value,
+        "from": detail.from_address,
+        "to": to_line,
+        "subject": detail.subject or "",
+        "created_at": detail.created_at.isoformat(),
+        "is_read": detail.is_read,
+        "has_attachments": detail.has_attachments,
+    }
+    if cc:
+        fm["cc"] = ", ".join(cc)
+    if bcc:
+        fm["bcc"] = ", ".join(bcc)
+    if detail.in_reply_to:
+        fm["in_reply_to"] = detail.in_reply_to
+    if detail.ses_message_id:
+        fm["ses_message_id"] = detail.ses_message_id
+
+    header = json.dumps(fm, ensure_ascii=False, indent=2)
+    content = f"---\n{header}\n---\n\n{body_md}\n"
+    path.write_text(content, encoding="utf-8")
 
 
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
@@ -241,6 +308,99 @@ def get_message(ctx: click.Context, message_id: str, as_json: bool) -> None:
         click.echo("\nattachments:", file=sys.stderr)
         for meta in detail.attachment_metadata:
             click.echo(f"  {meta}", file=sys.stderr)
+
+
+@main.command("archive-unread")
+@click.option(
+    "--out",
+    "out_dir",
+    type=click.Path(path_type=Path, file_okay=False, dir_okay=True),
+    default=_PROJECT_ROOT / "raw" / "emails",
+    show_default=True,
+    help="Directory for saved Markdown files (created if missing).",
+)
+@click.option(
+    "--limit",
+    "-n",
+    default=100,
+    type=click.IntRange(1, 500),
+    show_default=True,
+    help="Maximum unread inbound messages to process.",
+)
+@click.option(
+    "--all-inbound/--newsletters-only",
+    "include_all_inbound",
+    default=False,
+    show_default=True,
+    help="By default, skip obvious replies (Re:/Fwd:/In-Reply-To). "
+    "Use --all-inbound to archive every unread inbound message.",
+)
+@click.option(
+    "--mark-read/--no-mark-read",
+    default=False,
+    show_default=True,
+    help="After a successful write, mark the message read in Inkbox.",
+)
+@click.pass_context
+def archive_unread(
+    ctx: click.Context,
+    out_dir: Path,
+    limit: int,
+    include_all_inbound: bool,
+    mark_read: bool,
+) -> None:
+    """Save each unread inbound email as Markdown under raw/ (newsletter-shaped by default)."""
+    handle = ctx.obj["identity"]
+    out_dir = out_dir.resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    saved = 0
+    skipped = 0
+    ids_to_mark: list[str] = []
+
+    with identity_session(handle) as me:
+        for summary in me.iter_unread_emails(
+            page_size=min(100, limit),
+            direction=MessageDirection.INBOUND,
+        ):
+            if saved + skipped >= limit:
+                break
+            detail = me.get_message(str(summary.id))
+            if not include_all_inbound and not _looks_like_newsletter_email(detail):
+                skipped += 1
+                click.echo(
+                    f"skip (not newsletter-shaped): {detail.id}  {detail.subject or ''}",
+                    err=True,
+                )
+                continue
+            body_md = _message_body_markdown(detail)
+            if not body_md.strip():
+                skipped += 1
+                click.echo(
+                    f"skip (empty body): {detail.id}  {detail.subject or ''}",
+                    err=True,
+                )
+                continue
+            slug = _safe_filename_slug(detail.subject or "message")
+            fname = f"{detail.created_at:%Y%m%d-%H%M%S}_{slug}_{detail.id}.md"
+            path = out_dir / fname
+            _write_email_markdown(path, detail)
+            saved += 1
+            click.echo(str(path))
+            if mark_read:
+                ids_to_mark.append(str(detail.id))
+
+        if mark_read and ids_to_mark:
+            me.mark_emails_read(ids_to_mark)
+
+    if saved == 0:
+        click.echo("No matching unread messages archived.", err=True)
+    else:
+        click.echo(
+            f"Archived {saved} message(s) to {out_dir}"
+            + (f" ({skipped} skipped)" if skipped else ""),
+            err=True,
+        )
 
 
 if __name__ == "__main__":
