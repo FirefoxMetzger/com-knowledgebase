@@ -1,0 +1,31 @@
+Important AI newsletters — curated list (signup pages / home)
+
+TLDR AI (daily digest, technical)
+https://tldr.tech/ai
+
+The Rundown AI (daily briefing)
+https://www.therundown.ai/subscribe
+
+The Neuron (daily, tools + news)
+https://www.theneurondaily.com/
+
+Superhuman AI (daily, productivity + tools)
+https://www.superhuman.ai/
+
+Ben's Bites (startup / builder angle; frequent issues)
+https://www.bensbites.com/
+
+Import AI (research + policy, Jack Clark)
+https://importai.substack.com/
+
+AlphaSignal (research + repos, technical)
+https://alphasignalai.substack.com/
+
+AI Tidbits (technical links / papers)
+https://www.aitidbits.ai/
+
+The Batch — DeepLearning.AI (weekly, broad audience)
+https://www.deeplearning.ai/the-batch/
+
+TheSequence (ML engineering, twice weekly)
+https://thesequence.substack.com/
