@@ -1,9 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
 [project]
 name = "inkbox-starter"
 version = "0.1.0"
 description = "Starter app using uv and the Inkbox Python SDK"
 requires-python = ">=3.12"
 dependencies = [
+    "click>=8.1.0",
     "inkbox>=0.2.10",
     "python-dotenv>=1.2.2",
 ]
+[project.scripts]
+mailbox = "mailbox_cli.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mailbox_cli"]

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "mailbox": "uv run mailbox"
+  },
+  "dependencies": {
+    "@inkbox/cli": "^0.2.10"
+  }
+}
