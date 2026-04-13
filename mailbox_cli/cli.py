@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 import click
+import html2text
 from dotenv import load_dotenv
 from inkbox import Inkbox, Message, MessageDetail, MessageDirection
 
@@ -37,6 +38,20 @@ def identity_session(handle: str) -> Iterator[Any]:
         yield identity
 
 
+def _html_to_markdown(html: str) -> str:
+    """Convert HTML email bodies to Markdown (no hard line wrapping)."""
+    if not html or not html.strip():
+        return ""
+    conv = html2text.HTML2Text()
+    conv.body_width = 0
+    return conv.handle(html).strip()
+
+
+def _looks_like_html(s: str) -> bool:
+    t = s.strip()
+    return t.startswith("<") or ("<" in t and "</" in t)
+
+
 def _message_summary_dict(m: Message) -> dict[str, Any]:
     return {
         "id": str(m.id),
@@ -55,6 +70,7 @@ def _message_summary_dict(m: Message) -> dict[str, Any]:
 
 def _message_detail_dict(m: MessageDetail) -> dict[str, Any]:
     d = _message_summary_dict(m)
+    md_from_html = _html_to_markdown(m.body_html) if m.body_html else ""
     d.update(
         {
             "message_id": m.message_id,
@@ -62,6 +78,7 @@ def _message_detail_dict(m: MessageDetail) -> dict[str, Any]:
             "bcc_addresses": m.bcc_addresses,
             "body_text": m.body_text,
             "body_html": m.body_html,
+            "body_markdown": md_from_html if md_from_html else None,
             "in_reply_to": m.in_reply_to,
             "references": m.references,
             "attachment_metadata": m.attachment_metadata,
@@ -151,6 +168,8 @@ def list_messages(
     )
     for m in rows:
         subj = (m.subject or "").replace("\n", " ")
+        if _looks_like_html(subj):
+            subj = " ".join(_html_to_markdown(subj).split())
         if len(subj) > 50:
             subj = subj[:47] + "..."
         from_ = m.from_address
@@ -194,13 +213,14 @@ def get_message(ctx: click.Context, message_id: str, as_json: bool) -> None:
     if detail.in_reply_to:
         click.echo(f"in_reply_to:  {detail.in_reply_to}")
     click.echo()
-    if detail.body_text:
+    if detail.body_text and detail.body_text.strip():
         click.echo(detail.body_text)
     elif detail.body_html:
-        click.echo("(no plain text body; body_html present — use --json to inspect)")
-        click.echo(detail.body_html[:2000])
-        if len(detail.body_html or "") > 2000:
-            click.echo("\n... [truncated]", err=True)
+        md = _html_to_markdown(detail.body_html)
+        if md:
+            click.echo(md)
+        else:
+            click.echo("(could not convert body_html to markdown; use --json for raw HTML)")
     else:
         click.echo("(no body content)")
 
