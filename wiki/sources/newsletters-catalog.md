@@ -166,4 +166,4 @@ Compiled index of **inbound** newsletter exports under `raw/emails/newsletters/`
 
 ---
 
-See also: [[../topics/ai-newsletter-inbox]], [[../topics/claude-opus-4-7]], [[../topics/chatgpt-image-2-and-agents-apr-2026]], [[inkbox-mailbox-provenance]], [[raw-inventory]].
+See also: [[../topics/_index|Topic index (thematic)]], [[../topics/ai-newsletter-inbox]], [[../topics/claude-opus-4-7]], [[../topics/chatgpt-image-2-and-agents-apr-2026]], [[inkbox-mailbox-provenance]], [[raw-inventory]].

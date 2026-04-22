@@ -6,4 +6,4 @@
 
 **Uncertainty:** Paid vs free tiers, confirmation links still pending, and true sending cadence are only authoritative in the mailbox UI; archived files are static snapshots with envelope metadata in each header.
 
-**Where to go next:** [[../sources/newsletters-catalog]] (every message and path); [[../publications/_index|publication stubs]]; provenance [[../sources/inkbox-mailbox-provenance]]. For themed cross-links, see [[claude-opus-4-7]] and [[chatgpt-image-2-and-agents-apr-2026]].
+**Where to go next:** The **thematic** compiled layer is [[_index|topics/_index]] (summaries and `raw/` pointers by topic). The **complete** per-message list is [[../sources/newsletters-catalog]]; sender hubs are under [[../publications/_index|publication stubs]]; provenance is [[../sources/inkbox-mailbox-provenance]]. For two **spotlight** cross-publication digests, see [[claude-opus-4-7]] and [[chatgpt-image-2-and-agents-apr-2026]].

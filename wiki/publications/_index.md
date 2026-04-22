@@ -23,4 +23,4 @@ Each note is a **lightweight hub** for one sender/publication that appears in [[
 | Turing Post | [[turing-post]] |
 | What's Hot (Enterprise IT / VC) | [[whats-hot-enterprise-it]] |
 
-See also: [[../topics/ai-newsletter-inbox]], [[../_index|wiki map]].
+See also: [[../topics/ai-newsletter-inbox]], [[../topics/_index|topic index (thematic)]], [[../_index|wiki map]].

@@ -16,4 +16,4 @@
 
 **Uncertainty:** Pricing, eval claims, and release semantics should be taken from the newsletter bodies or primary sources cited inside them, not from this summary.
 
-See also: [[ai-newsletter-inbox]], [[../_index|wiki map]].
+See also: [[_index|topic index]], [[ai-newsletter-inbox]], [[../_index|wiki map]].

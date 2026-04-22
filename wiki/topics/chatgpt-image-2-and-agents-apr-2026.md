@@ -10,4 +10,4 @@
 
 **Publications (stubs):** [[../publications/superhuman-newsletter]], [[../publications/tldr-ai]], [[../publications/the-rundown-ai]].
 
-See also: [[ai-newsletter-inbox]], [[../_index|wiki map]].
+See also: [[_index|topic index]], [[ai-newsletter-inbox]], [[../_index|wiki map]].
