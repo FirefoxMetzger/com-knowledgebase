@@ -5,6 +5,8 @@ Compiled layer for this knowledge base. Source material lives under [[sources/ra
 ## Topics
 
 - [[topics/ai-newsletter-inbox|AI newsletter inbox]] — why these emails exist and how they are captured
+- [[topics/claude-opus-4-7|Claude Opus 4.7]] — cross-publication pointers (Apr 2026 captures)
+- [[topics/chatgpt-image-2-and-agents-apr-2026|ChatGPT Images 2.0 & agents]] — cross-publication pointers (Apr 2026 captures)
 
 ## Sources
 
@@ -14,7 +16,7 @@ Compiled layer for this knowledge base. Source material lives under [[sources/ra
 
 ## Publications (stubs)
 
-Quick jumps to per-newsletter notes (each links back to raw paths):
+Hub: [[publications/_index|publications/_index]]. Quick jumps (each points at the [[sources/newsletters-catalog|catalog]]):
 
 | Publication | Note |
 |-------------|------|
@@ -24,6 +26,7 @@ Quick jumps to per-newsletter notes (each links back to raw paths):
 | AI Tidbits | [[publications/ai-tidbits]] |
 | Ben's Bites | [[publications/bens-bites]] |
 | Creators' AI | [[publications/creators-ai]] |
+| DeepLearning.AI | [[publications/deeplearning-ai]] |
 | Exponential View | [[publications/exponential-view]] |
 | Import AI | [[publications/import-ai]] |
 | Simon Willison's Newsletter | [[publications/simon-willison]] |

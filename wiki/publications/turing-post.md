@@ -1,7 +1,7 @@
 # Turing Post
 
-**Summary:** AI / tech publication (Substack). Captured as a **welcome / thank you for subscribing** email.
+**Turing Post** — issues via Beehiiv (`turingpost@mail.beehiiv.com`); Substack welcome traffic may use `turingpost@substack.com`. Educational and industry angles (e.g. tokens 101, governance, culture pieces).
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-to-turing-post--7a0a351a-4e01-4f0b-838d-c7a7c110cdd8.md)
+**Catalog:** **Turing Post** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

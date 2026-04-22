@@ -1,7 +1,7 @@
 # Teaching computers how to talk
 
-**Summary:** Substack newsletter by Jurgen Gravestein (NLP / language-tech angle). Captured as a **welcome** email.
+Newsletter by **Jürgen Gravestein** (`jurgengravestein@substack.com`): NLP, speech, and language technology. This vault has **no** raw issue file yet (welcome-only capture was removed).
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-to-teaching-computers-how-to-talk--a29a56da-58da-409a-8993-a6b3e91ebee9.md)
+**Catalog:** **Teaching computers how to talk** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

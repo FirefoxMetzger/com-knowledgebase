@@ -7,6 +7,7 @@ import os
 import re
 import sys
 from contextlib import contextmanager
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterator
 
@@ -111,6 +112,17 @@ def _safe_filename_slug(text: str, max_len: int = 48) -> str:
     return raw[:max_len].rstrip("-")
 
 
+def _already_archived(out_dir: Path, message_id: str) -> bool:
+    """True if a Markdown file for this message id already exists in out_dir."""
+    suffix = f"{message_id}.md"
+    if not out_dir.is_dir():
+        return False
+    for p in out_dir.iterdir():
+        if p.suffix == ".md" and p.name.endswith(suffix):
+            return True
+    return False
+
+
 def _looks_like_newsletter_email(detail: MessageDetail) -> bool:
     """Light heuristic: skip obvious thread mail; keep bulk / newsletter-shaped mail."""
     if detail.in_reply_to:
@@ -135,13 +147,18 @@ def _message_body_markdown(detail: MessageDetail) -> str:
     return ""
 
 
-def _write_email_markdown(path: Path, detail: MessageDetail) -> None:
+def _write_email_markdown(
+    path: Path,
+    detail: MessageDetail,
+    *,
+    is_newsletter: bool | None = None,
+) -> None:
     body_md = _message_body_markdown(detail)
     to_line = ", ".join(detail.to_addresses)
     cc = detail.cc_addresses or []
     bcc = detail.bcc_addresses or []
     fm: dict[str, Any] = {
-        "source": "inkbox-email",
+        "source": "inkbox-mailbox-cli",
         "id": str(detail.id),
         "message_id": detail.message_id,
         "thread_id": str(detail.thread_id) if detail.thread_id else None,
@@ -150,9 +167,12 @@ def _write_email_markdown(path: Path, detail: MessageDetail) -> None:
         "to": to_line,
         "subject": detail.subject or "",
         "created_at": detail.created_at.isoformat(),
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
         "is_read": detail.is_read,
         "has_attachments": detail.has_attachments,
     }
+    if is_newsletter is not None:
+        fm["is_newsletter"] = is_newsletter
     if cc:
         fm["cc"] = ", ".join(cc)
     if bcc:
@@ -373,6 +393,13 @@ def archive_unread(
                     err=True,
                 )
                 continue
+            if _already_archived(out_dir, str(detail.id)):
+                skipped += 1
+                click.echo(
+                    f"skip (already on disk): {detail.id}  {detail.subject or ''}",
+                    err=True,
+                )
+                continue
             body_md = _message_body_markdown(detail)
             if not body_md.strip():
                 skipped += 1
@@ -382,9 +409,10 @@ def archive_unread(
                 )
                 continue
             slug = _safe_filename_slug(detail.subject or "message")
-            fname = f"{detail.created_at:%Y%m%d-%H%M%S}_{slug}_{detail.id}.md"
+            fname = f"{detail.created_at:%Y-%m-%d}--{slug}--{detail.id}.md"
             path = out_dir / fname
-            _write_email_markdown(path, detail)
+            fm_newsletter = _looks_like_newsletter_email(detail)
+            _write_email_markdown(path, detail, is_newsletter=fm_newsletter)
             saved += 1
             click.echo(str(path))
             if mark_read:

@@ -1,7 +1,7 @@
 # Simon Willison's Newsletter
 
-**Summary:** Simon Willison’s personal newsletter (Substack) on practical ML, data, and tooling. Captured as a **welcome / thank you for subscribing** email.
+**Simon Willison** (`simonw@substack.com`): practical notes on LLMs, open data, and small tools. This vault has **no** raw issue file yet (welcome-only capture was removed).
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-to-simon-willisons-newsletter--e12724f9-e77e-4f98-b5e6-292d9e6d9bc7.md)
+**Catalog:** **Simon Willison's Newsletter** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

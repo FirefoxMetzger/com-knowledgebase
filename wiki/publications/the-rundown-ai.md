@@ -1,7 +1,7 @@
 # The Rundown AI
 
-**Summary:** AI news rundown (Beehiiv; `daily.therundown.ai`). Captured as a **welcome / getting started** message.
+Daily AI briefing from **The Rundown** (`news@daily.therundown.ai`). Tone is fast, product- and market-oriented.
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-3-quick-steps-to-get-started--cc3e0c7e-e414-4040-9596-fa26d9a78333.md)
+**Catalog:** Issues are listed under **The Rundown AI** in [[../sources/newsletters-catalog|newsletters-catalog]] (each bullet links to `raw/emails/newsletters/...`).
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

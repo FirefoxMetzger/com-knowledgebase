@@ -1,7 +1,7 @@
 # Creators' AI
 
-**Summary:** “Creators’ AI” community / newsletter on Substack (free edition). Captured as a **welcome** email.
+**Creators' AI** community newsletter (`creatorsai@substack.com`): creator-economy and tooling angle on AI products.
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-to-the-creators-ai-community--e556bbb4-95d2-4530-9ed5-dd58be666dce.md)
+**Catalog:** **Creators' AI** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

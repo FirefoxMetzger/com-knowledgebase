@@ -1,0 +1,298 @@
+---
+{
+  "source": "inkbox-mailbox-cli",
+  "id": "c085a3be-debb-48ed-bfa8-4b405850ec22",
+  "message_id": "<0100019d968d48be-fe5ca49a-3033-402e-b405-aca30c228dd5-000000@email.amazonses.com>",
+  "thread_id": "53eb5e86-46e1-494f-a36a-ea7e21825bec",
+  "direction": "inbound",
+  "from": "dan@tldrnewsletter.com",
+  "to": "sally.anderson@inkboxmail.com",
+  "subject": "Gemini 3.1 Flash TTS 🎙️, Agent-to-Person marketplace 🤝, OpenAI Agents SDK 🛠️",
+  "created_at": "2026-04-16T13:48:59.820584+00:00",
+  "fetched_at": "2026-04-22T18:31:14.487390+00:00",
+  "is_read": false,
+  "has_attachments": false,
+  "is_newsletter": true
+}
+---
+
+Google's Gemini 3.1 Flash TTS enhances text-to-speech with improved
+expressivity and controllability, featuring a notable Elo score of
+1,211 ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+
+
+ Sign Up [1] |Advertise [2]|View Online [3] 
+
+		TLDR 
+
+		TOGETHER WITH [Metronome] [4]
+
+TLDR AI 2026-04-16
+
+ WHAT 50+ AI PRICING MODELS REVEAL ABOUT AI MONETIZATION IN 2026
+(SPONSOR) [4] 
+
+ Usage, credits, access, GBB… which monetization model makes sense
+for AI? Metronome's Pricing Index covers 50+ AI companies, and they've
+shared some takeaways in a new blog [4].
+
+Read it to see:
+
+→ Why hybrid pricing has become the norm
+
+→ How companies like ElevenLabs, Clay, and Perplexity [4] are
+handling AI credits
+
+→ How split pricing schemes for consumers & developers reflect value
+creation
+
+→ The 5 key consideration monetization leaders should take into
+account
+
+Read the blog [4]
+
+🚀 
+
+HEADLINES & LAUNCHES
+
+ GEMINI 3.1 FLASH TTS: THE NEXT GENERATION OF EXPRESSIVE AI SPEECH (4
+MINUTE READ) [5] 
+
+ Google's Gemini 3.1 Flash TTS enhances text-to-speech with improved
+expressivity and controllability, featuring a notable Elo score of
+1,211 on the Artificial Analysis TTS leaderboard. The model supports
+over 70 languages and introduces audio tags for granular control of
+vocal style, allowing easy manipulation via natural language commands.
+All generated audio is watermarked with SynthID to ensure authentic
+content, preventing misinformation. 
+
+ OPENAI'S UPDATED AGENTS SDK (4 MINUTE READ) [6] 
+
+ OpenAI introduced updates to its Agents SDK, adding a model-native
+harness for cross-file and tool workflows along with sandboxed
+execution for safer task handling. 
+
+ HUMWORK A2P MARKETPLACE CONNECTS AI AGENTS WITH EXPERTS (2 MINUTE
+READ) [7] 
+
+ Humwork launches the first Agent-to-Person (A2P) marketplace to
+connect AI agents with verified human experts when AI tools encounter
+challenges. The platform integrates with AI-centric tools like Claude
+Code and Replit, allowing handoffs to occur in under 30 seconds with
+full session context shared securely. With more than 1,000 experts
+available globally, Humwork boasts an 87% resolution rate and is
+backed by Y Combinator's P26 batch. 
+
+🧠 
+
+DEEP DIVES & ANALYSIS
+
+ EVALUATING AGENT REASONING (28 MINUTE READ) [8] 
+
+ IBM Research uses an executable benchmark with thousands of APIs and
+documents to test multi-step agent reasoning and tool use, revealing
+consistent performance gaps and common failure modes. 
+
+ EVALUATING AGENTS FOR SCIENTIFIC DISCOVERY (7 MINUTE READ) [9] 
+
+ Many teams are claiming extraordinary things about their agents. The
+evidence behind these claims is usually disappointing. ScienceWorld
+and DiscoveryWorld are benchmarks developed to test whether AI agents
+can actually do science. ScienceWorld asks whether agents can
+'re-make' classic scientific discoveries at roughly an elementary
+school level, while DiscoveryWorld tests open-ended discovery at a
+college or PhD level. These benchmarks, open and freely available,
+help test what science agents are actually capable of. 
+
+ WHY DO DLLMS TEND TO COLLAPSE IN RL (3 MINUTE READ) [10] 
+
+ Diffusion Language Models (dLLMs) experience training collapse during
+Reinforcement Learning because their log-likelihood must be estimated
+using high-variance Monte Carlo sampling, which creates noisy
+importance ratios. These noisy ratios induce gradient spikes that push
+policy drift in a positive feedback loop, a problem that traditional
+AR methods like conditional clipping fail to solve. The newly proposed
+StableDRL framework stabilizes the update process by combining
+unconditional clipping to suppress extreme values with
+self-normalization tied to the effective information in the batch. 
+
+ RETHINKING AI TCO: WHY COST PER TOKEN IS THE ONLY METRIC THAT MATTERS
+(6 MINUTE READ) [11] 
+
+ Cost per token is crucial for AI infrastructure TCO assessment due to
+its focus on delivered intelligence, integrating hardware, software,
+and utilization efficiencies. Unlike traditional metrics like compute
+cost or FLOPS per dollar, cost per token highlights real-world
+performance, enabling profitable AI scaling. Evidence from NVIDIA
+shows its Blackwell platform drastically reduces cost per token
+compared to Hopper, offering significant business value. 
+
+🧑‍💻 
+
+ENGINEERING & RESEARCH
+
+ RUN AI AGENTS WITHOUT EXPOSING YOUR INFRASTRUCTURE (SPONSOR) [12] 
+
+ You wouldn't let an unknown human into your infrastructure. Why let
+an unknown agent? Teleport Beams [13] runs each agent in an isolated
+Firecracker VM with built-in identity — connected to your
+infrastructure and inference services with no secrets and no IAM
+wrestling. Zero standing privileges. Fully auditable. Get early access
+[13]. 
+
+ PARCAE: DOING MORE WITH FEWER PARAMETERS USING STABLE LOOPED MODELS
+(6 MINUTE READ) [14] 
+
+ Parcae is one of the first stable architectures for looped language
+models. It achieves the quality of a Transformer twice the size with
+clean, predictable training. Parcae increases the recurrence rather
+than purely scaling data, creating a new medium to scale quality. The
+name Parcae is a homage to the three Roman fates: Nona, Decima, and
+Morta. 
+
+ NVIDIA'S LYRA 2 (32 MINUTE READ) [15] 
+
+ Lyra 2.0 is a framework for generating long, camera-controlled videos
+that maintain 3D consistency, using geometry-guided retrieval to
+prevent spatial forgetting and self-augmented training to reduce
+temporal drift. 
+
+ MANY-TIER INSTRUCTION HIERARCHY IN LLM AGENTS (1 MINUTE READ) [16] 
+
+ Researchers propose a Many-Tier Instruction Hierarchy (ManyIH) to
+address instruction conflicts in LLM agents, surpassing traditional
+models with fixed privilege levels. They introduce ManyIH-Bench,
+assessing models across 12 privilege levels and 853 agent tasks,
+finding current models perform poorly at 40% accuracy. This highlights
+the need for scalable conflict resolution in complex agentic
+environments. 
+
+🎁 
+
+MISCELLANEOUS
+
+ JENSEN HUANG – TPU COMPETITION, WHY WE SHOULD SELL CHIPS TO CHINA,
+& NVIDIA'S SUPPLY CHAIN MOAT (90 MINUTE READ) [17] 
+
+ This post features a transcript of an interview with Jensen Huang. He
+discusses TPU competition, Nvidia's lock on the supply chain needed to
+make advanced chips, whether the US should sell AI chips to China, why
+Nvidia isn't a hyperscaler, how the company makes its investments, and
+more. Links to audio and video of the interview are available. 
+
+ CLAUDE PROBABLY WASN'T SECRETLY NERFED. ANTHROPIC MADE THE BLACK BOX
+TOO DARK (10 MINUTE READ) [18] 
+
+ Users have accused Anthropic of nerfing Claude Code, but there's no
+evidence that Anthropic has done this. The strongest public reports
+still lack independent raw data. However, Anthropic didn't need to
+nerf Claude for Claude Code to become a different product. Effort
+defaults, adaptive thinking, cache duration, context compaction, quota
+policy, and status incidents can all change the experience while the
+model name stays the same. 
+
+⚡ 
+
+QUICK LINKS
+
+ TLDR IS HIRING A SENIOR SOFTWARE ENGINEER, APPLIED AI ($250K-$350K,
+FULLY REMOTE) [19] 
+
+ TLDR's Applied AI team is tasked with making every process at TLDR
+legible to code, runnable by anyone, and composable into larger
+workflows. Join a small, fast moving team using the latest AI tools
+with an unlimited token budget. Learn more [20]. 
+
+ CLOUDFLARE BROWSER RUN: EDGE-NATIVE INFRASTRUCTURE FOR AI AGENTS (12
+MINUTE READ) [21] 
+
+ Cloudflare has rebranded its Browser Rendering service to BROWSER
+RUN, introducing new features for AI agents. 
+
+ GOOGLE TESTS AGENTIC SHOPPING AND NATIVE CHECKOUT IN GEMINI (2 MINUTE
+READ) [22] 
+
+ Google is testing a Shopping Cart feature within the Gemini app,
+allowing in-app product browsing and purchasing. 
+
+ GEMINI APP FOR MACOS (3 MINUTE READ) [23] 
+
+ Google released a native Gemini app for Mac with system-wide access,
+screen context sharing, and support for image and video generation
+using Nano Banana and Veo. 
+
+ JANE STREET COMMITS $6 BILLION TO COREWEAVE AND TAKES A $1 BILLION
+EQUITY STAKE (7 MINUTE READ) [24] 
+
+ Jane Street is betting that the returns on AI-driven trading will
+justify $6 billion in cloud spending and a $1 billion equity position
+in the company providing it. 
+
+Love TLDR? Tell your friends and get rewards!
+
+ Share your referral link below with friends to get free TLDR swag! 
+
+ https://refer.tldr.tech/5a6caa33/2 [25] 
+
+		 Track your referrals here. [26] 
+
+Want to advertise in TLDR? 📰
+
+ If your company is interested in reaching an audience of AI
+professionals and decision makers, you may want to ADVERTISE WITH US
+[27]. 
+
+Want to work at TLDR? 💼
+
+ APPLY HERE [28], CREATE YOUR OWN ROLE [29] or send a friend's resume
+to jobs@tldr.tech and get $1k if we hire them! TLDR is one of INC.'S
+BEST BOOTSTRAPPED BUSINESSES [30] of 2025. 
+
+ If you have any comments or feedback, just respond to this email! 
+
+Thanks for reading, 
+Andrew Tan [31], Ali Aminian [32], & Jacob Turner [33] 
+
+ Manage your subscriptions [34] to our other newsletters on tech,
+startups, and programming. Or if TLDR AI isn't for you, please
+unsubscribe [35]. 
+
+ 
+
+Links:
+------
+[1] https://tldr.tech/ai?utm_source=tldrai
+[2] https://advertise.tldr.tech/?utm_source=tldrai&utm_medium=newsletter&utm_campaign=advertisetopnav
+[3] https://a.tldrnewsletter.com/web-version?ep=1&lc=bbb6a6da-3782-11f1-be87-87ba0ebc20ea&p=b97b2e02-3978-11f1-85a8-e709599e4e50&pt=campaign&t=1776347334&s=57d54fd052a2a57da3dd376e07753b861c8177c1fd80ecb9582f2a3f3202884e
+[4] https://metronome.com/blog/2026-trends-from-cataloging-50-ai-pricing-models?utm_campaign=index&utm_medium=newsletter&utm_source=tldr-ai&utm_content=
+[5] https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/?utm_source=tldrai
+[6] https://links.tldrnewsletter.com/ALGo3b
+[7] https://www.testingcatalog.com/humwork-a2p-marketplace-connects-ai-agents-with-experts/?utm_source=tldrai
+[8] https://huggingface.co/blog/ibm-research/vakra-benchmark-analysis?utm_source=tldrai
+[9] https://allenai.org/blog/evaluating-scientific-discovery-agents?utm_source=tldrai
+[10] https://links.tldrnewsletter.com/sS4VPu
+[11] https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/?utm_source=tldrai
+[12] https://fandf.co/4bvUDne?utm_source=tldrai
+[13] https://fandf.co/4bvUDne
+[14] https://www.together.ai/blog/parcae?utm_source=tldrai
+[15] https://arxiv.org/abs/2604.13036?utm_source=tldrai
+[16] https://arxiv.org/abs/2604.09443?utm_source=tldrai
+[17] https://www.dwarkesh.com/p/jensen-huang?utm_source=tldrai
+[18] https://www.implicator.ai/claude-probably-wasnt-secretly-nerfed-anthropic-made-the-black-box-too-dark/?utm_source=tldrai
+[19] https://jobs.ashbyhq.com/tldr.tech/3b21aaf8-dea5-4127-be71-602d30e5001e?utm_source=tldrai
+[20] https://jobs.ashbyhq.com/tldr.tech/3b21aaf8-dea5-4127-be71-602d30e5001e
+[21] https://blog.cloudflare.com/browser-run-for-ai-agents/?utm_source=tldrai
+[22] https://www.testingcatalog.com/google-tests-agentic-shopping-with-native-checkout-in-gemini/?utm_source=tldrai
+[23] https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/?utm_source=tldrai
+[24] https://thenextweb.com/news/jane-street-coreweave-6-billion-cloud-1-billion-equity-ai?utm_source=tldrai
+[25] https://refer.tldr.tech/5a6caa33/2
+[26] https://hub.sparklp.co/sub_822f3da8017f/2
+[27] https://advertise.tldr.tech/?utm_source=tldrai&utm_medium=newsletter&utm_campaign=advertisecta
+[28] https://jobs.ashbyhq.com/tldr.tech
+[29] https://jobs.ashbyhq.com/tldr.tech/c227b917-a6a4-40ce-8950-d3e165357871
+[30] https://www.linkedin.com/feed/update/urn:li:activity:7401699691039830016/
+[31] https://twitter.com/andrewztan
+[32] https://www.linkedin.com/in/aliiaminian/
+[33] https://www.linkedin.com/in/jacob-turner-7521a8198/
+[34] https://tldr.tech/ai/manage?email=sally.anderson%40inkboxmail.com
+[35] https://a.tldrnewsletter.com/unsubscribe?ep=1&l=eedf6b14-3de3-11ed-9a32-0241b9615763&lc=bbb6a6da-3782-11f1-be87-87ba0ebc20ea&p=b97b2e02-3978-11f1-85a8-e709599e4e50&pt=campaign&pv=4&spa=1776344636&t=1776347334&s=90d872e3254729f8b61a6cf408fcb76a729ef755dce5245ddf345c64c92dcba9

@@ -1,7 +1,7 @@
 # Exponential View
 
-**Summary:** Azeem Azhar’s publication on macro tech and AI (Substack: Exponential View). Captured as a **welcome / what to expect** email.
+**Exponential View** (`exponentialview@substack.com`): Azeem Azhar’s publication on exponential tech, macro, and AI; mix of essays and interviews.
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--welcome-to-exponential-view-heres-what-to-expect--0d273030-0549-4445-8e21-ebde169b2ff0.md)
+**Catalog:** **Exponential View** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].

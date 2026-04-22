@@ -1,7 +1,7 @@
 # What's Hot (Enterprise IT / VC)
 
-**Summary:** Substack publication “What’s Hot in Enterprise IT/VC” (`whatshot@substack.com`). Captured subject line is **“All set!”** (subscription acknowledgment).
+**What's Hot** (`whatshot@substack.com`): enterprise IT / VC lens. This vault has **no** raw issue file yet (onboarding-only capture was removed).
 
-**Raw:** [welcome](../../raw/emails/newsletters/2026-04-13--all-set--48f39052-13ff-4fc3-aa73-5aece4523f85.md)
+**Catalog:** **What's Hot (Enterprise IT / VC)** in [[../sources/newsletters-catalog|newsletters-catalog]].
 
-**See also:** [[../sources/newsletters-catalog]], [[../topics/ai-newsletter-inbox]]
+**Related:** [[../topics/ai-newsletter-inbox]], [[_index|All publications]].
