@@ -1,6 +1,7 @@
 ---
 
 ## source: "inkbox-mailbox-cli"
+
 message_id: "37f8f8db-1d4e-4dcd-a5df-5fd37432c6a9"
 thread_id: "0b8dbf6a-a9c1-431f-a9dc-020529d8ed94"
 direction: "inbound"
@@ -10,8 +11,6 @@ subject: "Ahead of the AI curve, finally!"
 created_at: "2026-04-13T22:40:47.961208+00:00"
 fetched_at: "2026-04-13T22:47:20.650890+00:00"
 is_newsletter: true
-
-
 
 Hi, Welcome to AI Tidbits! You've just joined a community of AI professionals and enthusiasts who want to stay ahead of the curve without drowning in the flood of daily advancements.
 
@@ -128,4 +127,3 @@ If you still can't find the newsletter, check your spam folder and mark this add
 [Unsubscribe](https://email.mg-d1.substack.com/c/eJx00k1vm0wQB_BPA7egfTOYAwcnjiPyPJg6deIkF7RvhDGwUHYxpp--wpWqXnoezej__2kkd_qrG-ZkNCUYsJVWd3YUVg7QO-iMrxIaC7SWoa8THEUhJgix0Ncth6b40kYP3GlVcPfXlBHmVwlTPMJEr6VQuNQxDwVdE7wmIdI61Fr6kBBEQsQwJYQhhgMarJiIGeeaUcxCul4F9QXJuGquHkPt153CwRLOcVkHsmt9sEU56FuWxA2j9pukcq63Ht14ZOeR3TRNAQcHSoCzAQeP7Lhcenlkp8By0ejitu7RnetqbTy61fMzluRtfidNnZ47lB8_6P4o5_3PR5ua-4ukLyU_HSBvV1g8TTZtm0o9pGF2lHR_fpyz7QbtYYLP92pKz901327o_vxKsu2B_P_w3EuaQQ7PkzqlLjtuaH48zNlDalOzxx-Qhmn70kuyA_H0Vn6ecMVPE5SHAL2cRPaNfsr48l_-HRX3Ld0021VX_4jfx7ureo1eHyWsng4b6fejKGTXtqMBNxfaLD3Vb6F-FA1IvhgUoBKMopgR5A-J5U0zB9woPdjOeAyBqUV3XXBu1nYUqms5mOQPqO_--Taj1cNyn8VhtIpIhP1LQn4FAAD__7UQzzE)
 
 [Get the appStart writing](https://email.mg-d1.substack.com/c/eJx0kbuO8zoMhJ9G6mzoFjsuVBxgkdcwdKEdIpZkSNRi8_YHzjbb_A2bGQw_coIj2Et92543zNieEIfWfQsVT8KSebR68eIeJg5WzvMklRBm4pAcHusOGaojiKujP6pRhj-tn-7Ki5tTRnkxy7jpLW5G3_0itzlC5GiVUJMwUitlhJGjHm_GL8Y5MFqaSd9v4-tbhOV5_DAj0j5EOV5w5MJrDCVxbOtW4cNiqXbgh30SnY3p_5h6MPX462bq4c7zdw6NSoWhQsQKgZh-dEprcOl0uGemvy5PcvUFhHlnavrIJRNkYvrrs3HYSiGog-9EJfOz-zWUlHpGeq-QnT8g_lKd3R8Y3PXPFaOVYl6MErza5o7jPbocobaSmRGYX778XOmf-1r3sSSH2TokjB6pcfpnVb1BvfLNMs23Wc2Sf1v1fwAAAP__9pWjJw)  
-
